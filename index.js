@@ -41,7 +41,7 @@ logger("Opened server site...", "[ Starting ]");
 function startBot(message) {
     (message) ? logger(message, "[ Starting ]") : "";
 
-    const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "Priyansh.js"], {
+    const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "PREM-BABU.js"], {
         cwd: __dirname,
         stdio: "inherit",
         shell: true
@@ -90,4 +90,4 @@ startBot();
         startBot();
     } else logger('You are using the latest version!', '[ CHECK UPDATE ]'), startBot();
 }).catch(err => logger("Unable to check update.", "[ CHECK UPDATE ]"));*/
-// THIZ BOT WAS MADE BY ME(Priyansh Rajput)- DO NOT STEAL MY CODE 💖🔱🕉️💌
+// THIS BOT WAS MADE BY MR PREM BABU DO NOT CHANGE CREDIT NAME
