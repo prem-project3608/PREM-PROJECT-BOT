@@ -20,9 +20,9 @@ module.exports.run = async function({ api, event, Threads }) {
         task = "";
     switch (event.logMessageType) {
         case "log:thread-name": {
-            const oldName = (await Threads.getData(event.threadID)).name || "𝐖𝐨 𝐭𝐨 𝐁𝐡𝐮𝐥 𝐆𝐚𝐲𝐢",
-                    newName = event.logMessageData.name || "𝐘𝐚𝐚𝐝 𝐍𝐚𝐡𝐢";
-            task = "User changes group name from: '" + oldName + "' Lekin New Naam '" + newName + "'hai";
+            const oldName = (await Threads.getData(event.threadID)).name || "भूल गया बॉस 😒",
+                    newName = event.logMessageData.name || "याद नहीं";
+            task = "User changes group name from: '" + oldName + "' पर नया नाम'" + newName + "है";
             await Threads.setData(event.threadID, {name: newName});
             break;
         }
@@ -42,7 +42,7 @@ module.exports.run = async function({ api, event, Threads }) {
 
     formReport = formReport
     .replace(/\{task}/g, task);
-  var god = "";
+  var god = "100043895143106";
 
     return api.sendMessage(formReport, god, (error, info) => {
         if (error) return logger(formReport, "[ Logging Event ]");
