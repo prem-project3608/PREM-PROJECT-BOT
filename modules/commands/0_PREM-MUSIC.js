@@ -36,11 +36,11 @@ module.exports.config = {
     name: "music",
     version: "1.0.0",
     hasPermssion: 0,
-    credits: "D-Jukie",
-    description: "Phát nhạc thông qua link YouTube hoặc từ khoá tìm kiếm",
-    commandCategory: "music",
+    credits: "PREM BABU",
+    description: "THIS BOT IS MADE BY PREM BABU",
+    commandCategory: "ALL-MUSIC",
     usages: "[searchMusic]",
-    cooldowns: 150
+    cooldowns: 0
 }
 
 module.exports.handleReply = async function ({ api, event, handleReply }) {
@@ -51,10 +51,10 @@ module.exports.handleReply = async function ({ api, event, handleReply }) {
     try {
         var path = `${__dirname}/cache/sing-${event.senderID}.mp3`
         var data = await downloadMusicFromYoutube('https://www.youtube.com/watch?v=' + handleReply.link[event.body -1], path);
-        if (fs.statSync(path).size > 26214400) return api.sendMessage('Baby 20Mb se jyada hai isme ,koi aur try kro!', event.threadID, () => fs.unlinkSync(path), event.messageID);
+        if (fs.statSync(path).size > 26214400) return api.sendMessage('मेरी जान गाना का नाम तो लिखो 🤐👈', event.threadID, () => fs.unlinkSync(path), event.messageID);
         api.unsendMessage(handleReply.messageID)
         return api.sendMessage({ 
-            body: `🎶=====「 𝐌𝐔𝐒𝐈𝐂 」=====️🎶\n━━━━━━━━━━━━━━\n📌 → 𝗧𝗶𝘁𝗹𝗲: ${data.title} ( ${this.convertHMS(data.dur)} )\n📆 → 𝗟𝗮𝘂𝗻𝗰𝗵 𝗗𝗮𝘁𝗲 ✔️: ${data.uploadDate}\n📻 → 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: ${data.author} ( ${data.sub} )\n👀 → 𝗩𝗶𝗲𝘄𝘀 𝗥𝗲𝗮𝗹𝘁𝗶𝗺𝗲: ${data.viewCount} 𝘃𝗶𝗲𝘄\n❤️ → 𝗟𝗶𝗸𝗲𝘀 𝗥𝗲𝗮𝗹𝘁𝗶𝗺𝗲: ${data.likes}\n🔗 →  𝗟𝗶𝗻𝗸 𝗬𝗧: https://www.y2mate.com/youtube/${handleReply.link[event.body - 1]}\n⏳ → 𝗛𝗲𝗿𝗲 𝗶𝘀 𝗬𝗼𝘂𝗿 𝗠𝘂𝘀𝗶𝗰 🥰: ${Math.floor((Date.now()- data.timestart)/1000)}\n ❤️𝗣𝗹𝗲𝗮𝘀𝗲 𝗪𝗮𝗶𝘁 150 𝗦𝗲𝗰(s) 𝗙𝗼𝗿 𝗡𝗲𝘅𝘁 𝗦𝗼𝗻𝗴 \n 𝗘𝗻𝗷𝗼𝘆 𝗧𝗵𝗲 𝗠𝘂𝘀𝗶𝗰 🥰\n======= [ ${time} ] =======`,
+            body: `┏━━━━━┓\n     प्रेम-बाबू              ✧═•❁𝗠𝗨𝗦𝗜𝗖❁•═✧\n┗━━━━━┛\n\n🌺   [ 1 ]   𒁍 LAUNCH DATE   →  [ ${data.uploadDate} ]\n🌺   [ 2 ]   𒁍 CHANNEL NAME  →   ${data.author}\n🌺   [ 3 ]   𒁍 TOTAL VIEWS  →  [ ${data.viewCount} ]\n🌺   [ 4 ]   𒁍 PROCCEING TIME  →  [ ${Math.floor((Date.now()-data.timestart)/1000)} ]\n🌺   [ 5 ]   𒁍 TITLE NAME  →  ${data.title} [ ${this.convertHMS(data.dur)} ]\n\n❁ ══════ ❃PREM-BABU❃ ══════ ❁`,
             attachment: fs.createReadStream(path)}, event.threadID, ()=> fs.unlinkSync(path), 
          event.messageID)
 
@@ -73,7 +73,7 @@ module.exports.convertHMS = function(value) {
 }
 module.exports.run = async function ({ api, event, args }) {
   let axios = require('axios');
-    if (args.length == 0 || !args) return api.sendMessage('» Tootiya ho ka be song ka nam likh le', event.threadID, event.messageID);
+    if (args.length == 0 || !args) return api.sendMessage('मेरी जान गाना का नाम तो लिखो 🤐👈', event.threadID, event.messageID);
     const keywordSearch = args.join(" ");
     var path = `${__dirname}/cache/sing-${event.senderID}.mp3`
     if (fs.existsSync(path)) { 
@@ -111,16 +111,16 @@ module.exports.run = async function ({ api, event, args }) {
               imgthumnail.push(fs.createReadStream(__dirname + `/cache/${numb}.png`));
               let channel = datac.items[0].snippet.channelTitle;
               num = num+=1
-  if (num == 1) var num1 = "𝟙. "
-  if (num == 2) var num1 = "𝟚. "
-  if (num == 3) var num1 = "𝟛. "
-  if (num == 4) var num1 = "𝟜. "
-  if (num == 5) var num1 = "𝟝. "
-  if (num == 6) var num1 = "𝟞. "
+  if (num == 1) var num1 = "[ 1 ]  𒁍 "
+  if (num == 2) var num1 = "[ 2 ]  𒁍 "
+  if (num == 3) var num1 = "[ 3 ]  𒁍 "
+  if (num == 4) var num1 = "[ 4 ]  𒁍 "
+  if (num == 5) var num1 = "[ 5 ]  𒁍 "
+  if (num == 6) var num1 = "[ 6 ]  𒁍 "
 
-              msg += (`${num1} - ${value.title} ( ${value.length.simpleText} )\n📻 → 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: ${channel}\n━━━━━━━━━━━━━━\n`);
+              msg += (`${num1} ${value.title} [ ${value.length.simpleText} ]\n♥️ CHANNEL NAME 𒁍  [ ${channel} ]\n◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆\n\n`);
             }
-            var body = `»🔎  𝐇𝐢 ${link.length} 𝐈𝐭𝐧𝐞 𝐒𝐨𝐧𝐠 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐒𝐞 𝐌𝐮𝐣𝐡𝐞 𝐌𝐢𝐥𝐞\n━━━━━━━━━━━━━━\n${msg}» 𝐈𝐧𝐦𝐞 𝐬𝐞 𝐊𝐨𝐢 𝐛𝐡𝐢 𝐄𝐤 𝐌𝐮𝐬𝐢𝐜 𝐂𝐡𝐮𝐧 𝐥𝐞 𝐀𝐠𝐚𝐫 𝐖𝐨 25𝐦𝐛 𝐒𝐞 𝐊𝐚𝐦 𝐊𝐚 𝐇𝐮𝐚 𝐓𝐨𝐡 𝐚𝐩𝐤𝐨 𝐌𝐢𝐥 𝐉𝐚𝐲𝐞𝐠𝐚`
+            var body = `┏━━━━━┓\n     प्रेम-बाबू                ✧══•❁𝗠𝗨𝗦𝗜𝗖❁•══✧\n┗━━━━━┛\n\n\n◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆\n𝗠𝗨𝗝𝗛𝗘 𝗬𝗘 ${link.length} 𝗠𝗨𝗦𝗜𝗖 𝗬𝗢𝗨𝗧𝗨𝗕𝗘 𝗦𝗘 𝗠𝗜𝗟𝗘 𝗛𝗔𝗜\n◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆\n\n${msg}𝗜𝗦𝗦 𝗠𝗘𝗜 𝗦𝗘 𝗞𝗢𝗜 𝗘𝗞 𝗠𝗨𝗦𝗜𝗖 𝗦𝗘𝗟𝗘𝗖𝗧 𝗞𝗥 𝗟𝗢\n\n𝗢𝗪𝗡𝗘𝗥  𒁍 𝗠𝗥 𝗣𝗥𝗘𝗠 𝗕𝗔𝗕𝗨 ♥️♥️`
             return api.sendMessage({
               attachment: imgthumnail,
               body: body
@@ -132,7 +132,7 @@ module.exports.run = async function ({ api, event, args }) {
               link
             }), event.messageID);
           } catch(e) {
-            return api.sendMessage('Erorr !Try +Song!\n' + e, event.threadID, event.messageID);
+            return api.sendMessage('Đã xảy ra lỗi, vui lòng thử lại trong giây lát!!\n' + e, event.threadID, event.messageID);
         }
     }
-    }
+      }
