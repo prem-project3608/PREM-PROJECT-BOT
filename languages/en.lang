@@ -3,7 +3,7 @@
 # Put the # character at the beginning of each sentence if you don't want the code to run those lines. 
 # Thanks to https://www.facebook.com/duong.than.net for translate to English!
 
-# mirai.js 
+# PREM-BABU.js 
 
 mirai.errorFormat=Malformed module!
 mirai.nameExist=Module's name is similar to another module!
@@ -58,9 +58,9 @@ users.needObject=Have to be an Object
 
 # includes/handle/handleCommand.js
 
-handleCommand.userBanned=⛔️~Tu Banned Hai Re 🤭!~🚫\n%1\n%2\nContact B0T Owner ArunKumar🖤 For Unban ⚠️
-handleCommand.threadBanned=⛔️Your Thread/Box/Group Has Been Banned!⛔️\n%1\n%2 Please Contact Owner Arun Kumar For Unban ⚠️
-handleCommand.commandNotExist=𝗣𝗲𝗵𝗹𝗲 𝗡𝗮𝘀𝗵𝗲 𝗕𝗮𝗻𝗱 𝗞𝗮𝗿𝗼 𝗙𝗶𝗿 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗗𝗲𝗻𝗮🫠 𝗖𝗵𝗮𝗹 𝗕𝗮𝘁𝗮😗 + %1 ya 𝐟𝐢𝐫 +𝗛𝗲𝗹𝗽2 🙄
+handleCommand.userBanned=⛔️~Tu Banned Hai Re 🤭!~🚫\n%1\n%2\nContact B0T Owner Prem Babu🖤 For Unban ⚠️
+handleCommand.threadBanned=⛔️Your Thread/Box/Group Has Been Banned!⛔️\n%1\n%2 Please Contact Owner Prem babu For Unban ⚠️
+handleCommand.commandNotExist=मेरी जान ऐसा कोई कमांड नही है। प्लीज सही कमांड लिखो अगर कमांड के बारे में नही मालूम है तो मेरे बॉस प्रेम बाबू से पूछ सकते हो। 🙂✋
 handleCommand.commandThreadBanned=Your thread is unable to use command "%1"
 handleCommand.commandUserBanned=You are unable to use command "%1"
 handleCommand.threadNotAllowNSFW=Your thread is not allowed to use NSFW commands
