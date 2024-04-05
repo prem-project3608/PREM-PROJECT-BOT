@@ -15,7 +15,7 @@ module.exports.onLoad = function () {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { join } = global.nodemodule["path"];
  
-    const path = join(__dirname, "cache", "joinvideo");
+    const path = join(__dirname, "PREM BABU", "PREM-1");
     if (existsSync(path)) mkdirSync(path, { recursive: true }); 
  
     const path2 = join(__dirname, "PREM BABU", "PREM-1");
@@ -39,7 +39,7 @@ module.exports.run = async function({ api, event }) {
             let { threadName, participantIDs } = await api.getThreadInfo(threadID);
  
             const threadData = global.data.threadData.get(parseInt(threadID)) || {};
-            const path = join(__dirname, "cache", "joinvideo");
+            const path = join(__dirname, "PREM BABU", "PREM-1");
             const pathGif = join(path, `${threadID}.video`);
  
             var mentions = [], nameArray = [], memLength = [], i = 0;
