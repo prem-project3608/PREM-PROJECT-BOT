@@ -35,7 +35,7 @@ module.exports.run = async function({ api, event, Users, Threads }) {
   const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
   const type = (event.author == event.logMessageData.leftParticipantFbId) ? "खुद ही भाग गया 😐👈" : "एडमिन ने गुस्से में निकाल दिया 😑👈";
   const path = join(__dirname, "PREM BABU", "PREM-2");
-  const pathGif = join(path, `${threadID}.mp4`);
+  const pathGif = join(path, `${threadID}.gif`);
   var msg, formPush
 
   if (existsSync(path)) mkdirSync(path, { recursive: true });
