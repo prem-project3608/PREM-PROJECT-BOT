@@ -19,8 +19,6 @@ async function downloadMusicFromYoutube(link, path) {
             var result = {
                 title: data.videoDetails.title,
                 dur: Number(data.videoDetails.lengthSeconds),
-              publishDate:
-data.videoDetails.publishDate,                    
                 viewCount: data.videoDetails.viewCount,
                 likes: data.videoDetails.likes,
                 author: data.videoDetails.author.name,
@@ -34,9 +32,9 @@ module.exports.config = {
     name: "song",
     version: "1.0.0",
     hasPermssion: 0,
-    credits: "D-Jukie",
-    description: "Phát nhạc thông qua link YouTube hoặc từ khoá tìm kiếm",
-    commandCategory: "music",
+    credits: "PREM BABU",
+    description: "THIS BOT IS MR PREM SHARMA",
+    commandCategory: "ALL MUSIC MP3",
     usages: "[searchMusic]",
     cooldowns: 0
 };
@@ -47,11 +45,10 @@ module.exports.handleReply = async function ({ api, event, handleReply }) {
     try {
         var path = `${__dirname}/cache/1.mp3`
         var data = await downloadMusicFromYoutube('https://www.youtube.com/watch?v=' + handleReply.link[event.body -1], path);
-        if (fs.statSync(path).size > 26214400) return api.sendMessage('The file cannot be sent because it is larger than 25MB.', event.threadID, () => fs.unlinkSync(path), event.messageID);
+        if (fs.statSync(path).size > 26214400) return api.sendMessage('The file cannot be sent because the capacity is greater than 25MB.', event.threadID, () => fs.unlinkSync(path), event.messageID);
         api.unsendMessage(handleReply.messageID)
         return api.sendMessage({ 
-		body: `====『 𝗠𝗨𝗦𝗜𝗖 』====
-[🎼] ➠ 𝐓𝐢𝐭𝐥𝐞: ${data.title}\n[📺] ➠ 𝘼𝙪𝙩𝙝𝙤𝙧: ${data.author}\n[⏰] ➠ 𝙏𝙞𝙢𝙚: ${this.convertHMS(data.dur)}\n[👀] ➠ 𝙑𝙞𝙚𝙬𝙨: ${data.viewCount}\n[💞] ➠ 𝙇𝙞𝙠𝙚𝙨: ${data.likes}\n 𝙋𝙪𝙗𝙡𝙞𝙨𝙝 𝘿𝙖𝙩𝙚: ${data.publishDate}\n[⏳] ➠ 𝙋𝙧𝙤𝙘𝙘𝙚𝙨𝙨𝙞𝙣𝙜 𝙏𝙞𝙢𝙚: ${Math.floor((Date.now()- data.timestart)/1000)} second\n📺====『 𝗠𝗨𝗦𝗜𝗖 』====📺`,
+		body: `┏━━━━━┓\n     प्रेम-बाबू                 ✧══•❁𝗦𝗢𝗡𝗚❁•══✧\n┗━━━━━┛\n\n🎵 Title𒁍   ${data.title}\n🎶 Name Channel 𒁍   ${data.author}\n⏱️ Time 𒁍  ${this.convertHMS(data.dur)}\n👀 Views 𒁍  ${data.viewCount}\n🥰 Likes 𒁍   ${data.likes}\n⏱️ Processing time 𒁍   ${Math.floor((Date.now()- data.timestart)/1000)} second\n✧═══•❁PREM-BABU❁•═══✧`,
             attachment: fs.createReadStream(path)}, event.threadID, ()=> fs.unlinkSync(path), 
          event.messageID)
             
@@ -69,7 +66,7 @@ module.exports.convertHMS = function(value) {
     return (hours != '00' ? hours +':': '') + minutes+':'+seconds;
 }
 module.exports.run = async function ({ api, event, args }) {
-    if (args.length == 0 || !args) return api.sendMessage('» Tutte kahe ke , song ka naam kon likhega!', event.threadID, event.messageID);
+    if (args.length == 0 || !args) return api.sendMessage('मेरी जान गाना का नाम तो लिखो 🤐👈', event.threadID, event.messageID);
     const keywordSearch = args.join(" ");
     var path = `${__dirname}/cache/1.mp3`
     if (fs.existsSync(path)) { 
@@ -78,9 +75,9 @@ module.exports.run = async function ({ api, event, args }) {
     if (args.join(" ").indexOf("https://") == 0) {
         try {
             var data = await downloadMusicFromYoutube(args.join(" "), path);
-            if (fs.statSync(path).size > 26214400) return api.sendMessage(' 25MB se jyada hai send ni hoga.', event.threadID, () => fs.unlinkSync(path), event.messageID);
+            if (fs.statSync(path).size > 26214400) return api.sendMessage('Unable to send files because the capacity is greater than 25MB .', event.threadID, () => fs.unlinkSync(path), event.messageID);
             return api.sendMessage({ 
-                body: `➠Title: ${data.title}\n➠Name Kênh: ${data.author}\n➠Thời gian: ${this.convertHMS(data.dur)}\n➠Lượt xem: ${data.viewCount}\n➠Lượt thích: ${data.likes}\n➠Thời gian xử lý: ${Math.floor((Date.now()- data.timestart)/1000)} second\n💿====DISME PROJECT====💿`,
+                body: `┏━━━━━┓\n     प्रेम-बाबू                 ✧══•❁𝗦𝗢𝗡𝗚❁•══✧\n┗━━━━━┛\n\n🎵 Title 𒁍  ${data.title}\n🎶 Name Channel 𒁍   ${data.author}\n⏱️ Time 𒁍   ${this.convertHMS(data.dur)}\n👀 Views: ${data.viewCount}\n👍 Likes 𒁍   ${data.likes}\n⏱️ Processing time 𒁍   ${Math.floor((Date.now()- data.timestart)/1000)} second\n✧═══•❁PREM-BABU❁•═══✧`,
                 attachment: fs.createReadStream(path)}, event.threadID, ()=> fs.unlinkSync(path), 
             event.messageID)
             
@@ -98,7 +95,7 @@ module.exports.run = async function ({ api, event, args }) {
               num = num+=1
               msg += (`${num} - ${value.title} (${value.length.simpleText})\n\n`);
             }
-            var body = `»🔎I🌸have🤔 ${link.length} results that match your search keywords:\n\n${msg}» Please reply, select one of the above searches🤷‍♂️😒jldi reply kr or bhi kam h 🤧`
+            var body = `┏━━━━━┓\n     प्रेम-बाबू                 ✧══•❁𝗦𝗢𝗡𝗚❁•══✧\n┗━━━━━┛\n\nMujhe Ye ${link.length} Song Youtube Se Mile Hai 🙂👈\n◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆\n\n${msg}◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆━◆\nIss Mei Se Koi Bhi Ek Gana Select Kr lo 🤐👈`
             return api.sendMessage({
               body: body
             }, event.threadID, (error, info) => global.client.handleReply.push({
@@ -109,7 +106,7 @@ module.exports.run = async function ({ api, event, args }) {
               link
             }), event.messageID);
           } catch(e) {
-            return api.sendMessage('Erorr 🗡 please try + Music !\n' + e, event.threadID, event.messageID);
+            return api.sendMessage('An error has occurred, please try again in a moment!!\n' + e, event.threadID, event.messageID);
         }
     }
-                             }
+                                                                                                                                                                                                       }
