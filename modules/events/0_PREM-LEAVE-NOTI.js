@@ -35,12 +35,12 @@ module.exports.run = async function({ api, event, Users, Threads }) {
   const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
   const type = (event.author == event.logMessageData.leftParticipantFbId) ? "खुद ही भाग गया 😐👈" : "एडमिन ने गुस्से में निकाल दिया 😑👈";
   const path = join(__dirname, "PREM BABU", "PREM-2");
-  const pathGif = join(path, `${threadID}.gif`);
+  const pathGif = join(path, `${threadID}.mp4`);
   var msg, formPush
 
   if (existsSync(path)) mkdirSync(path, { recursive: true });
 
-(typeof data.customLeave == "undefined") ? msg = "‎┏━━━━━┓\n    प्रेम-बाबू               ✧═•❁𝗪𝗘𝗟𝗖𝗢𝗠𝗘❁•═✧\n┗━━━━━┛\n\nसुकर है एक ठरकी इस ग्रुप में कम हो गया 😃✌️\nउसका नाम है 𒁍 {name}\nरीजन 𒁍 {type}\nWISH YOU HAVE A {session}\n{time} ♥️🌺♥️🌺♥️\n════════════════════════ ❁\nCREATER BY MR PREM PROJECT\n" : msg = data.customLeave;
+(typeof data.customLeave == "undefined") ? msg = "┏━━━━━┓\n    प्रेम-बाबू               ✧═•❁𝗪𝗘𝗟𝗖𝗢𝗠𝗘❁•═✧\n┗━━━━━┛\n\nसुकर है एक ठरकी इस ग्रुप में कम हो गया 😃✌️\nउसका नाम है 𒁍 {name}\nरीजन 𒁍 {type}\nWISH YOU HAVE A {session} || {time} ♥️🌺♥️🌺♥️\n════════════════════════ ❁\nCREATER BY MR PREM PROJECT\n" : msg = data.customLeave;
   msg = msg.replace(/\{name}/g, name).replace(/\{type}/g, type).replace(/\{session}/g, hours <= 10 ? "GOOD MORNING" : 
     hours > 10 && hours <= 12 ? "GOOD AFTERNOON" :
     hours > 12 && hours <= 18 ? "GOOD EVENING" : "GOOD NIGHT").replace(/\{time}/g, time);  
