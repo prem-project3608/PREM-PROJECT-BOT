@@ -6,7 +6,7 @@ module.exports.config = {
   description: "THIS BOT WAS MADE BY MR PREM BABU",
   dependencies: {
     "fs-extra": "",
-    "path": ""
+    "path": "path2"
   }
 };
 
