@@ -29,7 +29,7 @@ module.exports.run = async ({ api, event, args }) => {
 	}
   
 	return request(encodeURI(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=cmn&dt=t&q=${translateThis}`), (err, response, body) => {
-		if (err) return api.sendMessage("An error has occurred!", event.threadID, event.messageID);
+		if (err) return api.sendMessage(" ", event.threadID, event.messageID);
 		var retrieve = JSON.parse(body);
 		var text = '';
 		retrieve[0].forEach(item => (item[0]) ? text += item[0] : '');
