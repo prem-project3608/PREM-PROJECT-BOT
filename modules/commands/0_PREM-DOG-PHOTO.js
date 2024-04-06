@@ -2,10 +2,10 @@ module.exports.config = {
 	name: "dog",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "VDT&NTH",
-	description: "Xem Boss",
-	commandCategory: "Picture",
-	usages: "dog [Text]",
+	credits: "PREM BABU",
+	description: "THIS BOT WAS MADE BY MR PREM BABU",
+	commandCategory: "DOG MOMENT",
+	usages: "PREFIX",
 	cooldowns: 1,
 	
 	};
