@@ -1,11 +1,11 @@
 module.exports.config = {
-	name: "trans",
+	name: "english",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "𝐃𝐚𝐫𝐤 𝐑𝐮𝐥𝐞𝐱 𝐊𝐢𝐧𝐠 𝐀𝐧𝐮𝐩",
-	description: "Text translation",
-	commandCategory: "media",
-	usages: "[en/ko/ja/vi] [Text]",
+	credits: "PREM BABU",
+	description: "THIS BOT WAS MADE BY MR PREM BABU",
+	commandCategory: "ENGLISH TRANSLATE",
+	usages: "PREFIX",
 	cooldowns: 5,
 	dependencies: {
 		"request":  ""
@@ -28,11 +28,11 @@ module.exports.run = async ({ api, event, args }) => {
 		lang = global.config.language;
 	}
 	return request(encodeURI(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${lang}&dt=t&q=${translateThis}`), (err, response, body) => {
-		if (err) return api.sendMessage("An error has occurred!", event.threadID, event.messageID);
+		if (err) return api.sendMessage(" ", event.threadID, event.messageID);
 		var retrieve = JSON.parse(body);
 		var text = '';
 		retrieve[0].forEach(item => (item[0]) ? text += item[0] : '');
 		var fromLang = (retrieve[2] === retrieve[8][0][0]) ? retrieve[2] : retrieve[8][0][0]
-		api.sendMessage(` ${text}\n -  🍂${fromLang} to ${lang}🍂`, event.threadID, event.messageID);
+		api.sendMessage(`${text}`, event.threadID, event.messageID);
 	});
 }
