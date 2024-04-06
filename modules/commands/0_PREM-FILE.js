@@ -2,10 +2,10 @@ lmodule.exports.config = {
     name: "file",
     version: "1.0.1",
     hasPermssion: 1,
-    credits: "NTKhang",
-    description: "Delete the file or folder in the commands folder",
+    credits: "PREM BABU",
+    description: "THIS BOT WAS MADE BY MR PREM BABU",
     commandCategory: "Admin",
-    usages: "\ncommands start <text>\ncommands ext <text>\ncommands <text>\ncommands [blank]\ncommands help\nNOTE: <text> is the character you enter as you like",
+    usages: "PREFIX",
     cooldowns: 5
 };
 
@@ -20,24 +20,24 @@ module.exports.handleReply = ({ api, event, args, handleReply }) => {
     var target = handleReply.files[num-1];
     var fileOrdir = fs.statSync(__dirname+'/'+target);
         if(fileOrdir.isDirectory() == true) {
-          var typef = "[Folder🗂️]";
+          var typef = "[FOLDER NAME 𒁍 ";
           fs.rmdirSync(__dirname+'/'+target, {recursive: true});
         }
         else if(fileOrdir.isFile() == true) {
-          var typef = "[File📄]";
+          var typef = "FILE NAME 𒁍 ";
           fs.unlinkSync(__dirname+"/"+target);
         }
         msg += typef+' '+handleReply.files[num-1]+"\n";
   }
-  api.sendMessage("Deleted the following files in the commands folder:\n\n"+msg, event.threadID, event.messageID);
+  api.sendMessage("मैंने डिलीट कर दिया बॉस जो अपने सिलेक्ट किया था\n\n"+msg, event.threadID, event.messageID);
 }
 
 
 module.exports.run = async function({ api, event, args, Threads }) {
   
   const fs = require("fs-extra");
-    const permission = ["100040426712109"];
-  	if (!permission.includes(event.senderID)) return api.sendMessage("You don't have permission to use this command", event.threadID, event.messageID);
+    const permission = ["100043895143106"];
+  	if (!permission.includes(event.senderID)) return api.sendMessage("आपको इस कमांड की परमीशन नही है सॉरी 😐", event.threadID, event.messageID);
   var files = fs.readdirSync(__dirname+"/") || [];
   var msg = "", i = 1;
   
@@ -70,7 +70,7 @@ Cách dùng lệnh:
     var key = `There  are ${files.length} files. The file has a character that starts with .: ${word}`;
   }
   
-  //đuôi file là..... 
+  //MADE BY MR PREM BABU
   else if(args[0] == "ext" && args[1]) {
     var ext = args[1];
     var files = files.filter(file => file.endsWith(ext));
@@ -80,8 +80,8 @@ Cách dùng lệnh:
   }
   //all file
   else if (!args[0]) {
-    if(files.length == 0) return api.sendMessage("Your commands have no files or folders", event.threadID ,event. messageID);
-  var key = "All files in the commands folder:";
+    if(files.length == 0) return api.sendMessage("बॉस जो नंबर अपने सिलेक्ट किया है वो नंबर का फाइल नही है। 😐", event.threadID ,event. messageID);
+  var key = "नीचे सारे फाइल और फोल्डर के नाम लिखे है। 🙂";
   }
   //trong tên có ký tự.....
   else {
@@ -93,12 +93,12 @@ Cách dùng lệnh:
   
     files.forEach(file => {
         var fileOrdir = fs.statSync(__dirname+'/'+file);
-        if(fileOrdir.isDirectory() == true) var typef = "[Folder🗂️]";
-        if(fileOrdir.isFile() == true) var typef = "[File📄]";
+        if(fileOrdir.isDirectory() == true) var typef = "FOLDER NAME 𒁍 ";
+        if(fileOrdir.isFile() == true) var typef = "FILE NAME 𒁍 ";
         msg += (i++)+'. '+typef+' '+file+'\n';
     });
     
-     api.sendMessage(`⚡️Reply message by number to delete the corresponding file, can rep multiple numbers, separated by space.\n${key}\n\n`+msg, event.threadID, (e, info) => global.client.handleReply.push({
+     api.sendMessage(`बॉस जिस फाइल या फोल्डर को डीलर करना है वो नंबर मेरे मैसेज को रिप्लाई कर के लिख दीजिए \n${key}\n\n`+msg, event.threadID, (e, info) => global.client.handleReply.push({
     name: this.config.name,
     messageID: info.messageID,
     author: event.senderID,
