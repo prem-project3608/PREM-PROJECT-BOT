@@ -20,15 +20,14 @@ module.exports.run = async function({ api, event, Threads, args, Users }) {
     const logger = require("../../utils/log");
     if (!global.configModule[this.config.name].enable) return;
     var formReport =  "❁ ═══════ ❃•❃ ═══════ ❁\n🔮            𝗣𝗥𝗘𝗠-𝗕𝗔𝗕𝗨             🔮\n❁ ═══════ ❃•❃ ═══════ ❁" +
-	                "\n\n🌺 ग्रुप का नाम 𒁍 " + `${namethread}` +
-                        "\n🌺 ग्रुप यूआईडी " + event.threadID +
-                        "\n🌺 मैसेज {task}" +
-	                "\n━━━━━━━━━━━━━━━━━━━━━━
-                        "\n🌺 नाम 𒁍 " + (await Users.getData(event.author)).name +
-                        "\n🌺 यूआईडी 𒁍 " + event.author +
-                              Date.now() +
+	                "\n\n━━━━━━━━━━━━━━━━━━━━━━\n🌺 𝖦ROUP NAME ❯ " + `${namethread}` +
+                        "\n🌺 GROUP UID ❯ " + event.threadID +
+                        "\n🌺 MESSAGES ❯ {task}" +
+                        "\n🌺 USER NAME ❯ " + (await Users.getData(event.author)).name +
+                        "\n🌺 USER UID ❯ " + event.author +
+                        "\n" + Date.now() +
 			"\n━━━━━━━━━━━━━━━━━━━━━━\n" +
-			`टाइम और तारिक 𒁍 ${gio}`,
+			`DATE AND TIME ❯ ${gio}`,
 						
 	   task = "";
 	
@@ -36,16 +35,16 @@ module.exports.run = async function({ api, event, Threads, args, Users }) {
         case "log:thread-name": {
             const oldName = (await Threads.getData(event.threadID)).name || "Name does not exist",
                     newName = event.logMessageData.name || "Walang pangalan";
-            task = "किसी ने अपने ग्रुप का नाम बदला है " + "\nपुराना नाम 𒁍 " + oldName + "\nन्यू नाम 𒁍 " + newName;
+            task = "THE USER CHANGED THE GROUP NAME '" + oldName + "' TO '" + newName + "'";
             await Threads.setData(event.threadID, {name: newName});
             break;
         }
         case "log:subscribe": {
-            if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) task = "मुझे न्यू ग्रुप में एड किया गया है";
+            if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) task = "ADDED BY NEW GROUP";
             break;
         }
         case "log:unsubscribe": {
-            if (event.logMessageData.leftParticipantFbId== api.getCurrentUserID()) task = "मुझे इस ग्रुप से निकाल दिया गया है"
+            if (event.logMessageData.leftParticipantFbId== api.getCurrentUserID()) task = "BOT HAS BEEN KICKED OUT OF THE GROUP"
             break;
         }
         default: 
