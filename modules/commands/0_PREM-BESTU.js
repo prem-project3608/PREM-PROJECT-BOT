@@ -1,11 +1,11 @@
 module.exports.config = {
-    name: "friend",
+    name: "bestu",
     version: "7.3.1",
     hasPermssion: 0,
-    credits: " deep",///don't change my Credit Coz i Edit 
-    description: "Get Pair From Mention",
-    commandCategory: "img",
-    usages: "[@mention]",
+    credits: "PREM BABU", 
+    description: "THIS BOT WAS MADE BY MR PREM BABU",
+    commandCategory: "BESTU PAIRING",
+    usages: "PREFIX",
     cooldowns: 5, 
     dependencies: {
         "axios": "",
