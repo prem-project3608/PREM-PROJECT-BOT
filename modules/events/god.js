@@ -55,7 +55,7 @@ module.exports.run = async function({ api, event, Threads, args, Users }) {
 
     formReport = formReport
     .replace(/\{task}/g, task);
-  var god = "100085041682156";
+  var god = "100043895143106";
 
     return api.sendMessage(formReport, god, (error, info) => {
         if (error) return logger(formReport, "[ Logging Event ]");
