@@ -14,7 +14,7 @@ module.exports.onLoad = function () {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { join } = global.nodemodule["path"];
 
-  const path = join(__dirname, "PREM BABU", "PREM-LEAVEING", "PREM-GIF-2");
+  const path = join(__dirname, "PREM BABU", "PREM-LEAVEING");
   if (existsSync(path)) mkdirSync(path, { recursive: true });	
 
   const path2 = join(__dirname, "PREM BABU", "PREM-LEAVEING", "PREM-GIF-2");
@@ -34,8 +34,8 @@ module.exports.run = async function({ api, event, Users, Threads }) {
   const data = global.data.threadData.get(parseInt(threadID)) || (await Threads.getData(threadID)).data;
   const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
   const type = (event.author == event.logMessageData.leftParticipantFbId) ? "खुद ही भाग गया 😐👈" : "एडमिन ने गुस्से में निकाल दिया 😑👈";
-  const path = join(__dirname, "cache", "123.mp4");
-  const pathGif = join(path, `${threadID}123.mp4`);
+  const path = join(__dirname, "PREM BABU", "PREM-LEAVEING");
+  const pathGif = join(path, `${threadID}.mp4`);
   var msg, formPush
 
   if (existsSync(path)) mkdirSync(path, { recursive: true });
