@@ -2,10 +2,10 @@ module.exports.config = {
 	name: "chinese",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-	description: "Text translation",
-	commandCategory: "media",
-	usages: "[Text]",
+	credits: "PREM BABU",
+	description: "THIS BOT WAS MADE BY MR PREM BABU",
+	commandCategory: "CHINESE TRANSLATE",
+	usages: "PREFIX",
 	cooldowns: 5,
 	dependencies: {
 		"request":  ""
@@ -34,6 +34,6 @@ module.exports.run = async ({ api, event, args }) => {
 		var text = '';
 		retrieve[0].forEach(item => (item[0]) ? text += item[0] : '');
 		var fromLang = (retrieve[2] === retrieve[8][0][0]) ? retrieve[2] : retrieve[8][0][0]
-		api.sendMessage(` ${text}\n - 🍂🍂 ${fromLang} to Chinese🍂🍂`, event.threadID, event.messageID);
+		api.sendMessage(`${text}`, event.threadID, event.messageID);
 	});
                                                                                            }
