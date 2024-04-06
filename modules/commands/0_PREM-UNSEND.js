@@ -2,21 +2,17 @@ module.exports.config = {
 	name: "unsend",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "Mirai Team",
-	description: "Gỡ tin nhắn của bot",
-	commandCategory: "system",
-	usages: "unsend",
+	credits: "PREM BABU",
+	description: "THIS BOT WAS MADE BY MR PREM BABU",
+	commandCategory: "BOT MESSAGE DELET",
+	usages: "PREFIX",
 	cooldowns: 0
 };
 
 module.exports.languages = {
-	"vi": {
-		"returnCant": "Không thể gỡ tin nhắn của người khác.",
-		"missingReply": "Hãy reply tin nhắn cần gỡ."
-	},
 	"en": {
-		"returnCant": "Kisi Aur Ka Msg M Kese Unsend Karu.",
-		"missingReply": "Mere Jis Msg ko Unsend Karna Hai Usme Reply Karke Likkho."
+		"returnCant": "किसी और का मैसेज मैं कैसे डिलीट करूं 😐✌️",
+		"missingReply": "मेरे जिस मैसेज को डिलीट करना है उस मैसेज पे रिप्लाई कर के लिखो 😐✌️"
 	}
 }
 
