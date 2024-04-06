@@ -2,10 +2,10 @@ module.exports.config = {
     name: "out",
     version: "1.0.0",
     hasPermssion: 2,
-    credits: "Purv",
-    description: "",
-    commandCategory: "Admin",
-    usages: "out [id]",
+    credits: "PREM BABU",
+    description: "THIS BOT WAS MADE BY MR PREM BABU",
+    commandCategory: "BOT ID OUT OF THE GROUP",
+    usages: "PREFIX",
     cooldowns: 10,
 };
 
