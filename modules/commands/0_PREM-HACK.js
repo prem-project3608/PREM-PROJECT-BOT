@@ -2,10 +2,10 @@ module.exports.config = {
   name: "hack",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "John Lester",
-  description: "hack",
-  commandCategory: "hack",
-  usages: "@mention",
+  credits: "PREM BABU",
+  description: "THIS BOT WAS MADE BY MR PREM BABU",
+  commandCategory: "APRIL FULL PRANK",
+  usages: "PREFIX",
   dependencies: {
         "axios": "",
         "fs-extra": ""
