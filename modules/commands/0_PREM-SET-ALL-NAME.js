@@ -2,10 +2,10 @@ module.exports.config = {
  name: "setall",
  version: "1.0.0",
  hasPermssion: 2,
- credits: "Khánh Milo",
- description: "Set nicknames all tv",
- commandCategory: "other",
- usages: "setall [name]",
+ credits: "PREM BABU",
+ description: "THIS BOT WAS MADE BY MR PREM BABU",
+ commandCategory: "SET ALL MEMBERS NAME",
+ usages: "PREFIX",
  cooldowns: 3
 };
 
