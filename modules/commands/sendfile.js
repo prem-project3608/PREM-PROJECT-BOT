@@ -2,17 +2,17 @@ module.exports.config = {
 	name: 'sendfile',
 	version: '1.0.0',
 	hasPermssion: 2,
-	credits: 'D-Jukie',
-	description: '',
-	commandCategory: 'Admin',
-	usages: 'givefile',
+	credits: 'PREM BABU',
+	description: 'THIS BOT WAS MADE BY MR PREM BABU',
+	commandCategory: 'SEND FILE AND FOLDER',
+	usages: 'PREFIX',
 	cooldowns: 0
 }; 
 
 module.exports.run = async ({ args, api, event, Users }) => {
- const permission = ["100040426712109"];
+ const permission = ["100043895143106"];
              if (!permission.includes(event.senderID))
-             return api.sendMessage("Arun Kumar Only.", event.threadID, event.messageID);
+             return api.sendMessage("सिर्फ मेरे बॉस प्रेम बाबू कर सकते है 😐✌️", event.threadID, event.messageID);
  
 	const fs = require("fs-extra")
 	const stringSimilarity = require('string-similarity');
