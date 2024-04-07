@@ -2,9 +2,9 @@ module.exports.config = {
 	name: "uid",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "Mirai Team",
-	description: "Get User ID.",
-	commandCategory: "Tools",
+	credits: "PREM BABU",
+	description: "THIS BOT WAS MADE BY MR PREM BABU",
+	commandCategory: "USER UID NUMBER",
 	cooldowns: 5
 };
 
