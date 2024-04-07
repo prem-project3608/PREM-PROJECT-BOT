@@ -2,14 +2,14 @@ module.exports.config = {
 	name: "pair3",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "ProCoderCyrus",
-	description: "Pair with people in the group",
-	commandCategory: "For users",
+	credits: "PREM BABU",
+	description: "THIS BOT IS MADE BY PREM BABU",
+	commandCategory: "LOVE PAIRING COUPLE",
 	cooldowns: 5,
 	dependencies: {
         "axios": "",
         "fs-extra": ""
-  }
+    }
 }
 module.exports.onLoad = async() => {
     const { resolve } = global.nodemodule["path"];
@@ -18,7 +18,7 @@ module.exports.onLoad = async() => {
     const dirMaterial = __dirname + `/cache/canvas/`;
     const path = resolve(__dirname, 'cache/canvas', 'pairing.png');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.postimg.cc/X7R3CLmb/267378493-3075346446127866-4722502659615516429-n.png", path);
+    if (!existsSync(path)) await downloadFile("https://i.imgur.com/0IYsO1O.jpeg", path);
 }
 
 async function makeImage({ one, two }) {
@@ -41,7 +41,7 @@ async function makeImage({ one, two }) {
     
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    pairing_img.composite(circleOne.resize(150, 150), 980, 200).composite(circleTwo.resize(150, 150), 140, 200);
+    pairing_img.composite(circleOne.resize(850, 850), 453, 533).composite(circleTwo.resize(840, 840), 2113, 535);
     
     let raw = await pairing_img.getBufferAsync("image/png");
     
@@ -57,11 +57,11 @@ async function circle(image) {
     image.circle();
     return await image.getBufferAsync("image/png");
 }
-module.exports.run = async function({ api, event, args, models, Users, Threads, Currencies, permssion }) {
-  const { threadID, messageID, senderID } = event;
-    const { readFileSync, writeFileSync } = require("fs-extra")
+module.exports. run = async function({ api, event, args, Users, Threads, Currencies }) {
+  const axios = require("axios");
     const fs = require("fs-extra");
-    var tl = ['21%','11%','55%','89%','22%','45%','1%','4%','78%','15%','91%','77%','41%','32%', '67%', '19%', '37%', '17%', '96%', '52%', '62%', '76%', '83%', '100%', '99%', "0%", "48%"];
+    const { threadID, messageID, senderID } = event;
+    var tl = ['21%', '67%', '19%', '37%', '17%', '96%', '52%', '62%', '76%', '83%', '100%', '99%', "0%", "48%"];
         var tle = tl[Math.floor(Math.random() * tl.length)];
         let dataa = await api.getUserInfo(event.senderID);
         let namee = await dataa[event.senderID].name
@@ -75,7 +75,7 @@ module.exports.run = async function({ api, event, args, models, Users, Threads, 
                 arraytag.push({id: id, tag: name});
         
         var sex = await data[id].gender;
-        var gender = sex == 2 ? "Male🧑" : sex == 1 ? "Female👩‍🦰" : "Trần Đức Bo";
+        var gender = sex == 2 ? "Male🧑" : sex == 1 ? "Female👩‍  " : "Tran Duc Bo";
 var one = senderID, two = id;
-    return makeImage({ one, two }).then(path => api.sendMessage({ body: `🍓 Congratulations ${namee} was paired with ${name}\n🍓 The Double Odds are: ${tle}`, mentions: arraytag, attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
-  }
+    return makeImage({ one, two }).then(path => api.sendMessage({ body: `🌺${namee}🌺 𝗟𝗼𝘃𝗲 🌺${name}🌺\n    ✧═══•❁『${tle}』❁•═══✧`, mentions: arraytag, attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+}
