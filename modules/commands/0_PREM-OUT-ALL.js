@@ -2,10 +2,10 @@ module.exports.config = {
 	name: "outall",
 	version: "1.0.0",
 	hasPermssion: 2,
-	credits: "HungCho",
-	description: "Send messages to groups!",
-	commandCategory: "Admin",
-	usages: "sendnoti [Text]",
+	credits: "PREM BABU",
+	description: "THIS BOT WAS MADE BY MR PREM BABU",
+	commandCategory: "ALL OUT OF THE GROUP BOT",
+	usages: "PREFIX",
 	cooldowns: 5,
 	info: [
 		{
