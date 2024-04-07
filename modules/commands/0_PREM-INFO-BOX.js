@@ -5,13 +5,13 @@ const fontsInfo = 33
 const fontsOthers = 27
 const colorName = "#00FFFF"
 module.exports.config = {
-  name: "infobox",
+  name: "inbox",
   version: "2.0.0",
   hasPermssion: 0,
-  credits: "D-Jukie",
-  description: "Xem thông tin box của bạn",
-  commandCategory: "Thông tin",
-  usages: "infobox",
+  credits: "PREM BABU",
+  description: "THIS BOT WAS MADE BY MR PREM BABU",
+  commandCategory: "GROUP INFORMATION",
+  usages: "PREFIX",
   cooldowns: 10,
   dependencies: {
     canvas: "",
@@ -129,11 +129,11 @@ if(!fs.existsSync(__dirname+`${fonts}`)) {
   ctx.fillStyle = "#00FF00";
   ctx.textAlign = "start";
   fontSize = 20;
-  ctx.fillText(`⊶ Number of members: ${threadMem}`, 439, 199);
-  ctx.fillText(`⊶ Administrator: ${qtv}`, 439, 243);
-  ctx.fillText(`⊶ Male: ${nam}`, 439, 287);
-  ctx.fillText(`⊶ Female: ${nu}`, 439, 331);
-  ctx.fillText(`⊶ Total number of messages: ${sl}`, 439, 379);
+  ctx.fillText(`❁ TOTAL MEMBERS 𒁍 ${threadMem}`, 439, 199);
+  ctx.fillText(`❁ TOTAL ADMIN 𒁍 ${qtv}`, 439, 243);
+  ctx.fillText(`❁ TOTAL MALE 𒁍 ${nam}`, 439, 287);
+  ctx.fillText(`❁ TOTAL FEMALE 𒁍 ${nu}`, 439, 331);
+  ctx.fillText(`❁ TOTAL GROUP MESSAGES 𒁍 ${sl}`, 439, 379);
   ctx.font = `${fontsOthers}px Lobster`;
   ctx.fillStyle = "#00FF00";
   ctx.textAlign = "start";
