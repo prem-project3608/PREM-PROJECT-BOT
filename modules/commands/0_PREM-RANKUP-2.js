@@ -17,7 +17,7 @@ module.exports.handleEvent = async function({ api, event, Currencies, Users, get
   const { loadImage, createCanvas } = require("canvas");
   const fs = global.nodemodule["fs-extra"];
   const axios = global.nodemodule["axios"];
-  let pathImg = __dirname + "/PREM-BABU/RANKUP/rankup.gif";
+  let pathImg = __dirname + "/PREM-BABU/RANKUP/rankup.png";
   let pathAvt1 = __dirname + "/cache/Avtmot.png";
   var id1 = event.senderID;
   
