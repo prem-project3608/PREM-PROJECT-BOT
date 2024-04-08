@@ -2,10 +2,10 @@ module.exports.config = {
 	name: "yes",
 	version: "3.1.1",
 	hasPermssion: 0,
-	credits: "John Lester",
-	description: "Comment on the board",
-	commandCategory: "Memes",
-	usages: "[text]",
+	credits: "PREM BABU",
+	description: "THIS BOT WAS MADE BY MR PREM BABU",
+	commandCategory: "TEXT CREATE BOARD",
+	usages: "PREFIX",
 	cooldowns: 5,
 	dependencies: {
 		"canvas":"",
@@ -50,7 +50,7 @@ module.exports.run = async function({ api, event, args }) {
 	const axios = global.nodemodule["axios"];
 	let pathImg = __dirname + '/cache/yes.png';
 	var text = args.join(" ");
-	if (!text) return api.sendMessage("Enter the content of the comment on the board", threadID, messageID);
+	if (!text) return api.sendMessage("साथ में कोई मैसेज लिखो 😐✌️", threadID, messageID);
 	let getPorn = (await axios.get(`https://i.ibb.co/GQbRhkY/Picsart-22-08-14-17-32-11-488.jpg`, { responseType: 'arraybuffer' })).data;
 	fs.writeFileSync(pathImg, Buffer.from(getPorn, 'utf-8'));
 	let baseImage = await loadImage(pathImg);
