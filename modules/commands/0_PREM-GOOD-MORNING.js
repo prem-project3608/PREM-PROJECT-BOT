@@ -1,11 +1,11 @@
 const fs = require("fs");
 module.exports.config = {
-  name: "gm",
+  name: "GOOD MORNING",
     version: "2.1.1",
   hasPermssion: 0,
-  credits: "SHANKAR SUMAN", 
-  description: "Just Respond",
-  commandCategory: "no prefix",
+  credits: "PREM BABU", 
+  description: "THIS BOT WAS MADE BY MR PREM BABU",
+  commandCategory: "NO PREFIX",
     cooldowns: 5, 
 };
 
@@ -18,7 +18,7 @@ module.exports.handleEvent = async ({ api, event, Users, Currencies, args, utils
 react.includes("Gm") ||
 react.includes("GOOD MORNING")) {
     var msg = {
-        body: `𝐕𝐄𝐑𝐘 𝐆𝐎𝐎𝐃 𝐌𝐎𝐑𝐍𝐈𝐍𝐆😇  ${name} बाबू`,attachment: fs.createReadStream(__dirname + `/shankar/gm.gif`)
+        body: `𝐕𝐄𝐑𝐘 𝐆𝐎𝐎𝐃 𝐌𝐎𝐑𝐍𝐈𝐍𝐆 🌞`,attachment: fs.createReadStream(__dirname + `/PREM-BABU/PREM-GIF/GOOD-MORNING.gif`)
       }
       api.sendMessage(msg, threadID, messageID);
     api.setMessageReaction("☀️", event.messageID, (err) => {}, true)
