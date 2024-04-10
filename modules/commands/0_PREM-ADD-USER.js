@@ -1,16 +1,11 @@
-/**
-* @author ProCoderMew
-* @warn Do not edit code or edit credits
-*/
-
 module.exports.config = {
 	name: "adduser",
 	version: "2.4.3",
 	hasPermssion: 0,
-	credits: "ProCoderMew",
-	description: "Add user to the group by link or id",
-	commandCategory: "group",
-	usages: "[args]",
+	credits: "PREM BABU",
+	description: "THIS BOT WAS MADE BY MR PREM BABU",
+	commandCategory: "GROUP ADD MEMEBR",
+	usages: "PREFIX",
 	cooldowns: 5
 };
 
@@ -24,13 +19,13 @@ module.exports.run = async function ({ api, event, args }) {
 	const out = msg => api.sendMessage(msg, threadID, messageID);
 	var { participantIDs, approvalMode, adminIDs } = await api.getThreadInfo(threadID);
 	var participantIDs = participantIDs.map(e => parseInt(e));
-	if (!args[0]) return out("Please enter 1 id/link profile user need to add.");
+	if (!args[0]) return out("बॉस साथ में फैसबुक आईडी लिंक या उसका यू आई डी नंबर डालो जिसको आप ग्रुप में एड करना चाहते हो 🙂✌️");
 	if (!isNaN(args[0])) return adduser(args[0], undefined);
 	else {
 		try {
 			var [id, name, fail] = await getUID(args[0], api);
 			if (fail == true && id != null) return out(id);
-			else if (fail == true && id == null) return out("User ID not found.")
+			else if (fail == true && id == null) return out('सॉरी बॉस इस मेंबर की आईडी मुझे नही मिला 😐✌️")
 			else {
 				await adduser(id, name || "Facebook user");
 			}
@@ -41,17 +36,17 @@ module.exports.run = async function ({ api, event, args }) {
 
 	async function adduser(id, name) {
 		id = parseInt(id);
-		if (participantIDs.includes(id)) return out(`${name ? name : "Member"} are already in the group.`);
+		if (participantIDs.includes(id)) return out(`बॉस ये ${name ? name : "मेंबर"} पहले से ग्रुप में एड है 😐✌️`);
 		else {
 			var admins = adminIDs.map(e => parseInt(e.id));
 			try {
 				await api.addUserToGroup(id, threadID);
 			}
 			catch {
-				return out(`Can't add ${name ? name : "user"} to group.`);
+				return out(` सॉरी बॉस ये ${name ? name : "मेंबर"} एड नही हो रहा है`);
 			}
-			if (approvalMode === true && !admins.includes(botID)) return out(`Add ${name ? name : "member"} to the approved list !`);
-			else return out(`Added ${name ? name : "member"} to group !`)
+			if (approvalMode === true && !admins.includes(botID)) return out(`बॉस मैंने एड कर दिया ${name ? name : "मेंबर"} को वो अप्रूवल लिस्ट में है आप अप्रूवल दे दीजिए`);
+			else return out(`एड कर दिया ${name ? name : "मेंबर को"} ग्रुप में `)
 		}
 	}
     }
