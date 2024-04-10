@@ -1,13 +1,13 @@
 const fs = require("fs");
 const request = require("request");
 module.exports.config = {
-	name: "groupinfo",
+	name: "groupinf",
 	version: "1.0.0", 
 	hasPermssion: 1,
-	credits: "HungCatMoi",
-	description: "View your box information",
-	commandCategory: "Box", 
-	usages: "groupinfo", 
+	credits: "PREM BABU",
+	description: "THIS BOT WAS MADE BY MR PREM BABU",
+	commandCategory: "GROUP INFORMETION", 
+	usages: "PREFIX", 
 	cooldowns: 0,
 	dependencies: [] 
 };
@@ -36,16 +36,11 @@ module.exports.run = async function({ api, event, args }) {
 	let threadName = threadInfo.threadName;
 	let id = threadInfo.threadID;
 	let sex = threadInfo.approvalMode;
-			var pd = sex == false ? 'Turned off' : sex == true ? 'Turned on' : 'Kh';
+			var pd = sex == false ? 'TURNED OFF' : sex == true ? 'TURNED ON' : 'NOTHING';
 			var callback = () =>
 				api.sendMessage(
 					{
-						body: `🔧 GC Name: ${threadName}\n🔧 Group ID: ${id}\n🔧 Approval: ${pd}\n🔧 Emoji: ${icon}\n🔧 Information: including ${threadMem} members\n🔧 Number of males: ${nam} members\n🔧 Number of females: ${nu} members\n🔧 With ${qtv} administrators\n🔧 Total number of messages: ${sl} msgs.\n\nMade with ❤️ by:  💝🥀𝐎𝐖𝐍𝐄𝐑:- ☞𝕻𝖗𝖎𝖞𝖆𝖓𝖘𝖍 𝕽𝖆𝖏𝖕𝖚𝖙☜ 💫\n
-🖤𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 〠ℙ𝕣𝕚𝕪𝕒𝕟𝕤𝕙🖤\n
-
-😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ www.facebook.com/profile.php?id=100037743553265\n
-
-👋For Any Kind Of Help Contact On Telegram  Username 👉 @Priyanshrajput😇`,
+						body: `🌺 GROUP NAME 𒁍 ${threadName}\n🌺 GROUP UID 𒁍 ${id}\n🌺 GROUP APPROVAL 𒁍 ${pd}\n🌺 GROUP EMOJI 𒁍 ${icon}\n🌺 TOTAL MEMBER 𒁍 ${threadMem}\n🌺 TOTAL MALE 𒁍 ${nam}\n🌺 TOTAL FEMALE 𒁍 ${nu}\n🌺TOTAL GROUP ADMIN 𒁍 ${qtv}\n🌺 TOTAL GROUP MESSAGES 𒁍 ${sl}\n\n════════════════════════ ❁\nBOT CREATER BY MR PREM BABU 🙂✌️`,
 						attachment: fs.createReadStream(__dirname + '/cache/1.png')
 					},
 					event.threadID,
