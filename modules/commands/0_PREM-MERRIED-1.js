@@ -2,10 +2,10 @@ module.exports.config = {
     name: "married",
     version: "3.1.1",
     hasPermssion: 0,
-    credits: "John Lester",
-    description: "married",
-    commandCategory: "img",
-    usages: "[@mention]",
+    credits: "PREM BABU",
+    description: "THIS BOT WAS MADE BY MR PREM BABU",
+    commandCategory: "MERRIED PAIRING",
+    usages: "PREFIX",
     cooldowns: 5,
     dependencies: {
         "axios": "",
@@ -66,7 +66,7 @@ module.exports.run = async function ({ event, api, args }) {
     const fs = global.nodemodule["fs-extra"];
     const { threadID, messageID, senderID } = event;
     const mention = Object.keys(event.mentions);
-    if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
+    if (!mention[0]) return api.sendMessage("साथ में किसी को मेंशन करो 🤐✌️", threadID, messageID);
     else {
         const one = senderID, two = mention[0];
         return makeImage({ one, two }).then(path => api.sendMessage({ body: "", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
