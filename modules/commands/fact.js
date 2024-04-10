@@ -1,16 +1,29 @@
+const fs = require("fs");
 module.exports.config = {
-	name: "fact",
-	version: "1.0.0",
-	hasPermssion: 0,
-	credits: "Joshua Sy",
-	description: "random facts",
-	commandCategory: "...",
-	cooldowns: 5
+  name: "MISS YOU",
+    version: "2.1.1",
+  hasPermssion: 0,
+  credits: "PREM BABU", 
+  description: "THIS BOT WAS MADE BY MR PREM BABU",
+  commandCategory: "NO PREFIX",
+    cooldowns: 5, 
 };
 
-module.exports.run = async ({ api, event,args }) => {
-const axios = global.nodemodule["axios"];
-const res = await axios.get(`https://api.popcat.xyz/fact`);
-var fact = res.data.fact;
-return api.sendMessage(`Did you know?>> ${fact}`, event.threadID, event.messageID)
-}
+module.exports.handleEvent = async ({ api, event, Users, Currencies, args, utils, client, global }) => {
+  var name = await Users.getNameUser(event.senderID);
+  var { threadID, messageID } = event;
+  let react = event.body.toLowerCase();
+  if(react.includes("miss you") ||
+     react.includes("Miss you") || react.includes("miss u") || react.includes("Miss u") ||
+react.includes("Mich u") ||
+react.includes("MISS YOU")) {
+    var msg = {
+        body: ``,attachment: fs.createReadStream(__dirname + `/PREM-BABU/PREM-GIF/MISS-YOU.gif`)
+      }
+      api.sendMessage(msg, threadID, messageID);
+    api.setMessageReaction("🫣", event.messageID, (err) => {}, true)
+    }
+  }
+  module.exports.run = async ({ api, event, Currencies, args, utils, client, global }) => {
+
+  }
