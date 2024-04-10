@@ -12,6 +12,6 @@ module.exports.config = {
 
 module.exports.run = async function({ api, event, args }) {
 	var name = args.join(" ")
-	if (!name) api.sendMessage("❌ You have not entered the group name you want to change", event.threadID, event.messageID)
-	else api.setTitle(name, event.threadID, () => api.sendMessage(`🔨 The bot changed the group name to: ${name}`, event.threadID, event.messageID));
+	if (!name) api.sendMessage("बॉस साथ में ग्रुप का नाम लिखो जो आप रखना चाहते हो 😐✌️", event.threadID, event.messageID)
+	else api.setTitle(name, event.threadID, () => api.sendMessage(`अब इस ग्रुप का नाम ये है 👉 ${name}`, event.threadID, event.messageID));
 }
