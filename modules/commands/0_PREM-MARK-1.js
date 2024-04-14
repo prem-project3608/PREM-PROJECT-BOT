@@ -2,10 +2,10 @@ module.exports.config = {
 	name: "mark",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "MewMew mod By hungdz30cm",
-	description: "Comment on the board",
-	commandCategory: "game",
-	usages: "[text]",
+	credits: "PREM BABU",
+	description: "THIS BOT WAS MADE BY MR PREM BABU",
+	commandCategory: "TEXT CREATE BOARD",
+	usages: "PREFIX",
 	cooldowns: 5,
 	dependencies: {
 		"canvas":"",
@@ -50,7 +50,7 @@ module.exports.run = async function({ api, event, args }) {
 	const axios = global.nodemodule["axios"];
 	let pathImg = __dirname + '/cache/markngu.png';
 	var text = args.join(" ");
-	if (!text) return api.sendMessage("Enter the content of the comment on the board", threadID, messageID);
+	if (!text) return api.sendMessage("बाबू साथ में कुछ भी टैक्स्ट लिखो 😐✌️", threadID, messageID);
 	let getPorn = (await axios.get(`https://i.imgur.com/3j4GPdy.jpg`, { responseType: 'arraybuffer' })).data;
 	fs.writeFileSync(pathImg, Buffer.from(getPorn, 'utf-8'));
 	let baseImage = await loadImage(pathImg);
